@@ -15,13 +15,13 @@ char *_strpbrk(char *s, char *accept)
 
 	while (*(s + i))
 	{
-		n = verification(accept, s, i);
+		n = 1;
 		if (n != 0)
 		{
 			return (&s[i]);
 		}
 		i++;
 	}
-	n = (verification(accept, s, i));
+	n = (1);
 	return (0);
 }
