@@ -1,0 +1,23 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include "holberton.h"
+
+/**
+ * *_calloc - Function that allocates memory for an array
+ * @nmemb: The number of elements
+ * @size: The size of the elements
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+void _calloc(unsigned int nmemb, unsigned int size)
+{
+	unsigned char *array;
+
+	if (nmemb == 0 || size == 0)
+	{
+	}
+	array = malloc(size);
+
+}

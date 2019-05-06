@@ -1,0 +1,7 @@
+#include <stdio.h>
+
+int main ()
+{
+	printf("Oye mi perro\n");
+	return (0);
+}

@@ -1,0 +1,15 @@
+/**
+ * struct dog - Short description
+ *
+ * @name: Name of the beautiful dog
+ * @age: Age of the dog
+ * @owner: Name of the slave of the dog
+ *
+ * Description: Longer description
+ */
+struct dog
+{
+	char *name;
+	float age;
+	char *owner;
+};

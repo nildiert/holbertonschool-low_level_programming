@@ -1,0 +1,21 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include "holberton.h"
+
+/**
+ * *_calloc - Function that allocates memory for an array
+ * @min: The min number
+ * @max: The max number
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int *array_range(int min, int max)
+{
+	int array;
+
+	if ()
+return array;
+
+}

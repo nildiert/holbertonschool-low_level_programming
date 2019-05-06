@@ -1,0 +1,37 @@
+#include "holberton.h"
+#include <stdio.h>
+
+/**
+ * main - Print a square
+ * Return: On success 1.
+ *
+ */
+int main(void)
+{
+	int j;
+
+	for (j = 1; j <= 100; j++)
+	{
+		if ((j % 3) == 0 || ((j % 5) == 0))
+		{
+			if ((j % 3) == 0)
+			{
+				printf("Fizz");
+			}
+			if ((j % 5) == 0)
+			{
+				printf("Buzz");
+			}
+		}
+		else
+		{
+			printf("%d", j);
+		}
+		if (j != 100)
+		{
+			printf(" ");
+		}
+	}
+	printf("\n");
+	return (0);
+}

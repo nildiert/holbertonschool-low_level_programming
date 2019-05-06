@@ -1,0 +1,34 @@
+#include "lists.h"
+
+/**
+ * *insert_dnodeint_at_index - check the code for Holberton School students.
+ * @h: list
+ * @idx: Id of the node
+ * @n: Element of the list
+ * Return: Always EXIT_SUCCESS.
+ */
+dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
+{
+
+	dlistint_t *copy;
+	dlistint_t *new;
+	unsigned int count = 0;
+
+	if (!h)
+		return (NULL);
+	if (!(new = malloc(sizeof(dlistint_t))))
+		return (NULL);
+	new->n = n;
+	copy = *h;
+	while (count < idx)
+	{
+		if (copy->next == NULL && (count + 1) != idx)
+			return (NULL);
+		copy = copy->next;
+		count++;
+	}
+	new->next = copy;
+	new->prev = copy->prev;
+	copy->prev = new;
+	return (*h);
+}
