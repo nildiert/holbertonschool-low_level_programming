@@ -16,13 +16,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 /*		int i = 0;*/
 		unsigned long int index;
 		hash_node_t *new_node = NULL;
-		char *val_copy;
-		char *key_copy;
+		char *val_copy, *key_copy;
 
 		new_node = malloc(sizeof(hash_node_t));
 		(void)index;
 		val_copy = strdup(value);
-		if ((key && strcmp(key, '') == 0) )
+		if ((key && strcmp(key, "") != 0) )
 			key_copy = strdup(key);
 		else
 			return (0);
