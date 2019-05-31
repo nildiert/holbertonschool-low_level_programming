@@ -1,10 +1,9 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_set - hash djb2 algoritm.
+ * *hash_table_get - hash djb2 algoritm.
  * @ht: hash table you want to add or update the key
  * @key: key
- * @value: size of the array of the hash table
  *
  * Return: Always EXIT_SUCCESS.
  */
