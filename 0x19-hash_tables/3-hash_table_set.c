@@ -11,7 +11,7 @@
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	if (ht)
+	if (ht && !key)
 	{
 /*		int i = 0;*/
 		unsigned long int index;
@@ -23,7 +23,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		(void)index;
 		val_copy = strdup(value);
 		key_copy = strdup(key);
-		if (!*val_copy || !*key_copy || !key)
+		if (!*val_copy || !*key_copy)
 			return (0);
 		index = key_index((unsigned char *)key, ht->size);
 		new_node->key = key_copy;
