@@ -3,7 +3,7 @@
  * *hash_table_create - Creates a hash_table.
  * @size: size of the array
  *
- * Return: Always EXIT_SUCCESS.
+ * Return: hash or NULL.
  */
 
 hash_table_t *hash_table_create(unsigned long int size)
@@ -23,6 +23,5 @@ hash_table_t *hash_table_create(unsigned long int size)
 				return (NULL);
 		return (hash);
 	}
-	else
-		return (NULL);
+	return (NULL);
 }
