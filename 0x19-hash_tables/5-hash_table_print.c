@@ -1,32 +1,36 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_set - hash djb2 algoritm.
+ * hash_table_print - hash djb2 algoritm.
  * @ht: hash table you want to add or update the key
- * @key: key
- * @value: size of the array of the hash table
  *
  * Return: Always EXIT_SUCCESS.
  */
 
 void hash_table_print(const hash_table_t *ht)
 {
-	if (ht != NULL)
-	{
-/*		int i = 0;*/
-		unsigned long int index;
-		hash_node_t *copy = NULL;
+	unsigned int i;
+	hash_node_t *copy;
+	int counter = 0;
 
-		index = key_index((unsigned char *)key, ht->size);
-		copy = ht->array[index];
-		while (copy)
+	if (ht)
+	{
+		printf("{");
+		for (i = 0; i < ht->size; i++)
 		{
-			if (strcmp(copy->key, key) == 0)
+			if (ht->array != NULL)
 			{
-				return (copy->value);
+				copy = ht->array[i];
+				while (copy)
+				{
+					if (counter)
+						printf(", ");
+					printf("'%s': '%s'", copy->key, copy->value);
+					counter++;
+					copy = copy->next;
+				}
 			}
-			copy = copy->next;
 		}
+		printf("}\n");
 	}
-	return (NULL);
 }
