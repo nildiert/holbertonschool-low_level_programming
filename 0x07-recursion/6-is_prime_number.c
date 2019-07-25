@@ -1,7 +1,27 @@
-#include <stdio.h>
 #include "holberton.h"
 #include <unistd.h>
-int calculate(int n, int i);
+#include <stdio.h>
+
+
+int calculate(int number, int value, int count)
+{
+	/* printf("number %d value %d count %d\n", number, value, count); */
+	/* if (count > 2 || number <= 1 ) */
+		return (0);
+	else
+	{
+		if (count == 2 && number == value - 1)
+			return (1);
+		else
+		{
+			if (number % value == 0)
+				return (calculate(number, value + 1, count + 1));
+			else
+				return (calculate(number, value + 1, count));
+		}
+	}
+}
+
 
 /**
  * _sqrt_recursion - Calculate the square root
@@ -10,40 +30,8 @@ int calculate(int n, int i);
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-int _sqrt_recursion(int n)
-{
-	if (n < 0)
-	{
-		return (-1);
-	}
-	else
-	{
-		return (calculate(n, 1));
-	}
-}
 
-/**
- * calculate - Calculate the square root
- * @n: The number that receives
- * @i: The number that iterate
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int calculate(int n, int i)
+int is_prime_number(int n)
 {
-	if ((i * i) == n)
-	{
-		return (i);
-	}
-	else
-	{
-		if (i == n)
-		{
-			return (-1);
-		}
-		else
-		{
-			return (calculate(n, i + 1));
-		}
-	}
+	return calculate(n, 1, 0);
 }

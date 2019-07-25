@@ -1,22 +1,15 @@
 #include "holberton.h"
-#include <unistd.h>
 
 /**
- * _puts_recursion - writes the character c to stdout
- * @s: The strings that receives
+ * _puts_recursion - Function to print recursive
+ * @s: Character that receives
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
  */
+
 void _puts_recursion(char *s)
 {
-	if (*(s) != 0)
-	{
-	_putchar(*(s));
-	_puts_recursion(s + 1);
-	}
+	if (s != '\0')
+		_putchar(*s);
 	else
-	{
-		_putchar(10);
-	}
+		_puts_recursion();
 }
