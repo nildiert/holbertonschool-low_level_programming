@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+gcc -Wall -Wextra -Werror -pedantic 1-main.c 1-binary.c -o 1-binary
+./1-binary
+echo "**********       Betty style       ************"
+betty 1-binary.c
