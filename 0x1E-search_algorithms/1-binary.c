@@ -1,14 +1,36 @@
 #include "search_algos.h"
 
+
 /**
- * main - Entry point
+ * print_array - Entry point
  *
+ * @array: Array
+ * @first: Size of array
+ * @last: Value to find
+ * Return: Always EXIT_SUCCESS
+ */
+void print_array(int *array, int first, int last)
+{
+	int i;
+
+	printf("Searching in array: ");
+	for (i = first; i < last; i++)
+		printf("%d, ", array[i]);
+	printf("%d", array[i]);
+	printf("\n");
+}
+
+
+/**
+ * binary_search - Entry point
+ *
+ * @array: Array
+ * @size: Size of array
+ * @value: Value to find
  * Return: Always EXIT_SUCCESS
  */
 int binary_search(int *array, size_t size, int value)
 {
-
-	size_t i = 0;
 	size_t first;
 	size_t half;
 	size_t last;
@@ -20,27 +42,16 @@ int binary_search(int *array, size_t size, int value)
 
 	first = 0;
 	last = size - 1;
-	for (i = 0; i < size; i++)
+	while (first <= last)
 	{
-		half = ((last - first) / 2);
-		if (value == array[half])
-		{
-			printf("Es igual! value %d half %d\n", value, (int)half);
-			return ((int)half);
-		}
-		else if (value < array[half])
-		{
-			printf("Value(%d) es menor que array[half](%d)\n", value, array[half]);
-			last = half;
-
-		}
+		print_array(array, (int)first, (int)last);
+		half = first + (last - first) / 2;
+		if (array[half] == value)
+			return ((int)(half));
+		if (array[half] < value)
+			first = half + 1;
 		else
-		{
-			printf("Value(%d) es mayor que array[half](%d)\n", value, array[half]);
-			first = half;
-		}
-
-
+			last = half - 1;
 	}
 
 	return (-1);
